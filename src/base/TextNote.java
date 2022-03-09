@@ -8,4 +8,15 @@ public class TextNote extends Note{
 	{
 		super(title);
 	}
+	
+	public TextNote(String title, String content)
+	{
+		super(title);
+		this.content = new String(content);
+	}
+	
+	public String getContent()
+	{
+		return content;
+	}
 }
