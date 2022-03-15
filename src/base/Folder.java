@@ -1,9 +1,10 @@
 package base;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Collections;
 
-public class Folder implements Comparable<Folder>{
+public class Folder implements Comparable<Folder>,Serializable{
 	
 	private ArrayList<Note> notes;
 	private String name;
