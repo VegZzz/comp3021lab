@@ -123,4 +123,34 @@ public class NoteBook implements Serializable{
 		}
 		return true;
 	}
+	
+	public void addFolder(String name) // already check no duplicate
+	{
+		folders.add(new Folder(name));
+	}
+	
+	public boolean setTextNoteContent(String folder_str, String note_str,String newContent)
+	{
+		for(Folder i:folders)
+		{
+			if(i.getName().equals(folder_str))
+			{
+				for(Note j:i.getNotes())
+				{
+					if(j.getTitle().equals(note_str))
+					{
+						if(j instanceof TextNote)
+						{
+							((TextNote)j).setContent(newContent);
+							return true;
+						}else
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
 }
